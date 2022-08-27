@@ -1,4 +1,5 @@
 <script>
+  import Button from "../Button.svelte";
   import CopyIcon from "./../../assets/Copy.svg";
   import RefreshIcon from "./../../assets/Refresh.svg";
   import Options from "./Options.svelte";
@@ -16,24 +17,6 @@
   let isSymbols = false;
   let isWord = false;
   let word = "";
-  $: if (length) {
-    console.log(length);
-  }
-  $: if (upper) {
-    console.log(upper);
-  }
-  $: if (lower) {
-    console.log(lower);
-  }
-  $: if (numbers) {
-    console.log(numbers);
-  }
-  $: if (symbols) {
-    console.log(symbols);
-  }
-  $: if (word) {
-    console.log(word);
-  }
   const copyToClipBoard = () => {
     navigator.clipboard.writeText(password);
   };
@@ -47,16 +30,20 @@
   <div class="password-box">
     <p>{password}</p>
     <div class="pass-buttons">
-      <button on:click={copyToClipBoard}><CopyIcon /></button>
-      <button><RefreshIcon /></button>
+      <Button
+        classNames=""
+        clickFunction={copyToClipBoard}
+        component={CopyIcon}
+      />
+      <Button classNames="" component={RefreshIcon} />
     </div>
   </div>
   <div class="presets-container">
     <h3>presets:</h3>
-    <button>perfect</button>
-    <button>random</button>
-    <button>minimum</button>
-    <button class="genreate-btn">generate</button>
+    <Button classNames="" content="perfect" />
+    <Button classNames="" content="random" />
+    <Button classNames="" content="minimum" />
+    <Button classNames="genreate-btn" content="generate" />
   </div>
   <div class="custom-container">
     <h3>custom:</h3>

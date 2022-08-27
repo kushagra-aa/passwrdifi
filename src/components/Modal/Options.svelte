@@ -9,6 +9,9 @@
     number: "",
     range: "",
   };
+  $: if (value) {
+    console.log(value);
+  }
 </script>
 
 <div class={`${classNames.container} options-container`}>
