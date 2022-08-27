@@ -1,22 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
+
+@import url("./styles/modal/index.css");
+
 :root {
   --primary: 231, 111, 81;
   --primary2: 236, 97, 62;
   --secondary: 2, 40, 53;
   --accent: 183, 22, 22;
 }
+
 ::-moz-selection {
   color: rgba(var(--primary2), 1);
   background: rgba(var(--accent), 0.8);
 }
+
 /* Code for Firefox */
 ::selection {
   color: rgba(var(--primary2), 1);
   background: rgba(var(--accent), 0.8);
 }
+
 * {
   padding: 0px;
   margin: 0px;
   color: rgba(var(--secondary), 1);
-  background: rgba(var(--primary), 1);
   box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+body {
+  background: rgba(var(--primary), 1);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.5s ease-in-out !important;
+}
+
+button:hover {
+  filter: brightness(120%) !important;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }

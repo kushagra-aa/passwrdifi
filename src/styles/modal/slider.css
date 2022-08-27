@@ -1,0 +1,35 @@
+.custom-container > .options-container > input[type="range"] {
+  grid-area: slide;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10%;
+  border-radius: 10px;
+  background: rgb(var(--secondary));
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-container
+  > .options-container
+  > input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: rgb(var(--accent));
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.custom-container > .options-container > input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: rgb(var(--accent));
+  cursor: pointer;
+  outline: none;
+  border: none;
+}

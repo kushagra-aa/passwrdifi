@@ -58,17 +58,21 @@
     <button class="genreate-btn">generate</button>
   </div>
   <div class="custom-container">
-    <div class="">
+    <h3>custom:</h3>
+    <div class="options-container">
       <h4>length</h4>
-      <input type="checkbox" bind:checked={isLength} />
+      <div class="tickbox-container">
+        <input type="checkbox" bind:checked={isLength} />
+        <span class="checkmark" />
+      </div>
       <input
-        class={!isLength ? "disabled-input" : "enabled-input"}
+        class={`${!isLength ? "disabled-input" : "enabled-input"}`}
         disabled={!isLength}
         type="number"
         bind:value={length}
       />
       <input
-        class={!isLength ? "disabled-input" : "enabled-input"}
+        class={`${!isLength ? "disabled-input" : "enabled-input"}`}
         disabled={!isLength}
         type="range"
         min="1"
@@ -76,17 +80,20 @@
         bind:value={length}
       />
     </div>
-    <div class="">
+    <div class="options-container">
       <h4>uppercase</h4>
-      <input type="checkbox" bind:checked={isUpper} />
+      <div class="tickbox-container">
+        <input type="checkbox" bind:checked={isUpper} />
+        <span class="checkmark" />
+      </div>
       <input
-        class={!isUpper ? "disabled-input" : "enabled-input"}
+        class={`${!isUpper ? "disabled-input" : "enabled-input"}`}
         disabled={!isUpper}
         type="number"
         bind:value={upper}
       />
       <input
-        class={!isUpper ? "disabled-input" : "enabled-input"}
+        class={`${!isUpper ? "disabled-input" : "enabled-input"}`}
         disabled={!isUpper}
         type="range"
         min="1"
@@ -94,17 +101,20 @@
         bind:value={upper}
       />
     </div>
-    <div class="">
+    <div class="options-container">
       <h4>lowercase</h4>
-      <input type="checkbox" bind:checked={isLower} />
+      <div class="tickbox-container">
+        <input type="checkbox" bind:checked={isLower} />
+        <span class="checkmark" />
+      </div>
       <input
-        class={!isLower ? "disabled-input" : "enabled-input"}
+        class={`${!isLower ? "disabled-input" : "enabled-input"}`}
         disabled={!isLower}
         type="number"
         bind:value={lower}
       />
       <input
-        class={!isLower ? "disabled-input" : "enabled-input"}
+        class={`${!isLower ? "disabled-input" : "enabled-input"}`}
         disabled={!isLower}
         type="range"
         min="1"
@@ -112,17 +122,20 @@
         bind:value={lower}
       />
     </div>
-    <div class="">
+    <div class="options-container">
       <h4>numbers</h4>
-      <input type="checkbox" bind:checked={isNumbers} />
+      <div class="tickbox-container">
+        <input type="checkbox" bind:checked={isNumbers} />
+        <span class="checkmark" />
+      </div>
       <input
-        class={!isNumbers ? "disabled-input" : "enabled-input"}
+        class={`${!isNumbers ? "disabled-input" : "enabled-input"}`}
         disabled={!isNumbers}
         type="number"
         bind:value={numbers}
       />
       <input
-        class={!isNumbers ? "disabled-input" : "enabled-input"}
+        class={`${!isNumbers ? "disabled-input" : "enabled-input"}`}
         disabled={!isNumbers}
         type="range"
         min="1"
@@ -130,17 +143,20 @@
         bind:value={numbers}
       />
     </div>
-    <div class="">
+    <div class="options-container">
       <h4>symbols</h4>
-      <input type="checkbox" bind:checked={isSymbols} />
+      <div class="tickbox-container">
+        <input type="checkbox" bind:checked={isSymbols} />
+        <span class="checkmark" />
+      </div>
       <input
-        class={!isSymbols ? "disabled-input" : "enabled-input"}
+        class={`${!isSymbols ? "disabled-input" : "enabled-input"}`}
         disabled={!isSymbols}
         type="number"
         bind:value={symbols}
       />
       <input
-        class={!isSymbols ? "disabled-input" : "enabled-input"}
+        class={`${!isSymbols ? "disabled-input" : "enabled-input"}`}
         disabled={!isSymbols}
         type="range"
         min="1"
@@ -148,14 +164,18 @@
         bind:value={symbols}
       />
     </div>
-    <div class="">
+    <div class="options-container words-option-container">
       <h4>word</h4>
-      <input type="checkbox" bind:checked={isWord} />
+      <div class="tickbox-container">
+        <input type="checkbox" bind:checked={isWord} />
+        <span class="checkmark" />
+      </div>
       <input
-        class={!isWord ? "disabled-input" : "enabled-input"}
+        class={`${!isWord ? "disabled-input" : "enabled-input"}`}
         disabled={!isWord}
         type="text"
         bind:value={word}
+        maxlength={length}
       />
       <p>
         {word.length}

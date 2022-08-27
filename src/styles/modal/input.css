@@ -1,0 +1,44 @@
+.disabled-input {
+  opacity: 0.8;
+  filter: brightness(90%);
+}
+
+.disabled-input:hover {
+  filter: none !important;
+}
+
+.enabled-input {
+  filter: brightness(105%);
+}
+
+.custom-container > .options-container > input[type="number"],
+.custom-container > .options-container > input[type="text"] {
+  padding: 5%;
+  grid-area: input;
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  background: #e76f51;
+  box-shadow: inset 0px 4px 4px rgba(var(--secondary), 0.12);
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  transition: all 0.5s ease-in-out;
+}
+
+/* On mouse-over, add a grey background color */
+.custom-container > .options-container > input:hover {
+  filter: brightness(108%);
+}
+.custom-container > .options-container > input:focus {
+  filter: brightness(115%);
+}
+.custom-container > .options-container > input[type="number"] {
+  width: 40%;
+  height: 80%;
+}
+.custom-container > .options-container > input[type="text"] {
+  width: 100%;
+  padding: 0.4% 2%;
+  text-align: left;
+}
