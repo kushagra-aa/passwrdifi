@@ -5,7 +5,7 @@
   import Options from "./Options.svelte";
   let password =
     "afsdnbahsdjkflbghkfasdbghjkfvdbavlhjkbhdjklsgbfhjlkadsgfhjkgbsdakjhfbfkhjdsbflhjkdsbfdlhsjkvbhj";
-  let length = 10;
+  let length = 6;
   let upper = 0;
   let lower = 0;
   let numbers = 0;
@@ -20,6 +20,22 @@
   const copyToClipBoard = () => {
     navigator.clipboard.writeText(password);
   };
+  const makePerfect = () => {
+    length = 10;
+    upper = 2;
+    lower = 2;
+    numbers = 2;
+    symbols = 2;
+  };
+  const makeRandom = () => {};
+  const makeMinimum = () => {
+    upper = 1;
+    lower = 1;
+    numbers = 1;
+    symbols = 1;
+  };
+  const generatePassword = () => {};
+  const refreshPassword = () => {};
 </script>
 
 <div class="modal-container">
@@ -35,23 +51,31 @@
         clickFunction={copyToClipBoard}
         component={CopyIcon}
       />
-      <Button classNames="" component={RefreshIcon} />
+      <Button
+        clickFunction={refreshPassword}
+        classNames=""
+        component={RefreshIcon}
+      />
     </div>
   </div>
   <div class="presets-container">
     <h3>presets:</h3>
-    <Button classNames="" content="perfect" />
-    <Button classNames="" content="random" />
-    <Button classNames="" content="minimum" />
-    <Button classNames="genreate-btn" content="generate" />
+    <Button clickFunction={makePerfect} classNames="" content="perfect" />
+    <Button clickFunction={makeRandom} classNames="" content="random" />
+    <Button clickFunction={makeMinimum} classNames="" content="minimum" />
+    <Button
+      clickFunction={generatePassword}
+      classNames="genreate-btn"
+      content="generate"
+    />
   </div>
   <div class="custom-container">
     <h3>custom:</h3>
-    <Options title="length" value={length} isValue={isLength} />
-    <Options title="uppercase" value={upper} isValue={isUpper} />
-    <Options title="lowercase" value={lower} isValue={isLower} />
-    <Options title="numbers" value={numbers} isValue={isNumbers} />
-    <Options title="symbols" value={symbols} isValue={isSymbols} />
+    <Options title="length" bind:value={length} bind:isValue={isLength} />
+    <Options title="uppercase" bind:value={upper} bind:isValue={isUpper} />
+    <Options title="lowercase" bind:value={lower} bind:isValue={isLower} />
+    <Options title="numbers" bind:value={numbers} bind:isValue={isNumbers} />
+    <Options title="symbols" bind:value={symbols} bind:isValue={isSymbols} />
     <Options
       title="word"
       value={word}
