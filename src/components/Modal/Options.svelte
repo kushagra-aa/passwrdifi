@@ -4,14 +4,12 @@
   export let isValue;
   export let isWords = false;
   export let length = 0;
+  export let isLength = false;
   export let classNames = {
     container: "",
     number: "",
     range: "",
   };
-  $: if (value) {
-    console.log(value);
-  }
 </script>
 
 <div class={`${classNames.container} options-container`}>
@@ -26,7 +24,7 @@
       disabled={!isValue}
       type="text"
       bind:value
-      maxlength={length}
+      maxlength={isLength ? length : 60}
     />
     <p>
       {value.length}

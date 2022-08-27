@@ -13,5 +13,8 @@
     "rollup-plugin-svelte-svg": "^1.0.0-beta.6",
     "svelte": "^3.49.0",
     "vite": "^3.0.0"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
   }
 }

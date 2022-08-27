@@ -3,8 +3,9 @@
   import CopyIcon from "./../../assets/Copy.svg";
   import RefreshIcon from "./../../assets/Refresh.svg";
   import Options from "./Options.svelte";
-  let password =
-    "afsdnbahsdjkflbghkfasdbghjkfvdbavlhjkbhdjklsgbfhjlkadsgfhjkgbsdakjhfbfkhjdsbflhjkdsbfdlhsjkvbhj";
+  import Api from "./../../services/Api";
+  import { onMount } from "svelte";
+  let password = "";
   let length = 6;
   let upper = 0;
   let lower = 0;
@@ -17,25 +18,102 @@
   let isSymbols = false;
   let isWord = false;
   let word = "";
+  let lastData = {};
+  let lastEndpoint = {};
+  onMount(() => genrateRandomPassword());
+  $: if (isLower) if (lower <= 0) lower = 1;
+  $: if (isUpper) if (upper <= 0) upper = 1;
+  $: if (isNumbers) if (numbers <= 0) numbers = 1;
+  $: if (isSymbols) if (symbols <= 0) symbols = 1;
+  const genrateRandomPassword = async () => {
+    lastEndpoint = "/pass/generateRandom";
+    password = await Api.post(lastEndpoint).then((resp) => resp.data.password);
+  };
   const copyToClipBoard = () => {
     navigator.clipboard.writeText(password);
   };
-  const makePerfect = () => {
+  const makePerfect = async () => {
+    lastEndpoint = "/pass/generateRandomPerfect";
     length = 10;
     upper = 2;
     lower = 2;
     numbers = 2;
     symbols = 2;
+    if (isWord) {
+      lastEndpoint = "/pass/generateFromString";
+      lastData = { String: word, Perfect: "True" };
+    }
+    password = await Api.post(lastEndpoint, lastData).then(
+      (resp) => resp.data.password
+    );
   };
-  const makeRandom = () => {};
-  const makeMinimum = () => {
+  const makeRandom = async () => {
+    isLower = false;
+    isUpper = false;
+    isWord = false;
+    isNumbers = false;
+    isSymbols = false;
+    lastEndpoint = "/pass/generateRandom";
+    lastData = {};
+    if (isLength) {
+      lastEndpoint = "/pass/generateRandomWithLength";
+      lastData = {
+        Length: length,
+      };
+    }
+    password = await Api.post(lastEndpoint, lastData).then(
+      (resp) => resp.data.password
+    );
+  };
+  const makeMinimum = async () => {
     upper = 1;
     lower = 1;
     numbers = 1;
     symbols = 1;
+    isLower = false;
+    isUpper = false;
+    isWord = false;
+    isNumbers = false;
+    isSymbols = false;
+    lastEndpoint = "/pass/generateRandomWithMinimum";
+    lastData = {
+      Length: length,
+    };
+    password = await Api.post(lastEndpoint, lastData).then(
+      (resp) => resp.data.password
+    );
   };
-  const generatePassword = () => {};
-  const refreshPassword = () => {};
+  const generatePassword = async () => {
+    lastData = {
+      Length: length,
+      Upper: isUpper ? upper : 0,
+      Lower: isLower ? lower : 0,
+      Symbols: isSymbols ? symbols : 0,
+      Digits: isNumbers ? numbers : 0,
+    };
+    lastEndpoint = "/pass/generateRandomWithCustom";
+    if (!isUpper && !isLower && !isSymbols && !isNumbers && !isWord)
+      lastEndpoint = "/pass/generateRandom";
+    if (isLength) {
+      lastEndpoint = "/pass/generateRandomWithLength";
+      lastData = {
+        Length: length,
+      };
+    }
+    if (isWord) {
+      lastEndpoint = "/pass/generateFromString";
+      lastData = { String: word, Perfect: "False" };
+    }
+    password = await Api.post(lastEndpoint, lastData).then(
+      (resp) => resp.data.password
+    );
+    length = password.length;
+  };
+  const refreshPassword = async () => {
+    password = await Api.post(lastEndpoint, lastData).then(
+      (resp) => resp.data.password
+    );
+  };
 </script>
 
 <div class="modal-container">
@@ -78,10 +156,11 @@
     <Options title="symbols" bind:value={symbols} bind:isValue={isSymbols} />
     <Options
       title="word"
-      value={word}
-      isValue={isWord}
+      bind:value={word}
+      bind:isValue={isWord}
       isWords={true}
       {length}
+      {isLength}
       classNames={{
         container: "words-option-container",
         number: "",
