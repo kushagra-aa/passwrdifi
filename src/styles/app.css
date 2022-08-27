@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
 
-@import url("./styles/modal/index.css");
+@import url("./modal/index.css");
 
 :root {
   --primary: 231, 111, 81;
