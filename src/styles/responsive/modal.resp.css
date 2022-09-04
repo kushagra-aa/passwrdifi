@@ -1,0 +1,94 @@
+@media screen and (max-width: 450px) {
+  ::root {
+    --basic-radius: 10px;
+  }
+  .modal-container {
+    gap: 2rem;
+    padding: 10% 5%;
+  }
+  .modal-container > .title-container > h1 {
+    font-size: 2.2em;
+    text-align: center;
+  }
+  .modal-container > .title-container > h2 {
+    display: none;
+  }
+  .modal-container > .password-box {
+    height: 4vh;
+  }
+  .modal-container > .password-box > p {
+    font-size: 1.5em;
+  }
+  .modal-container > .password-box > .pass-buttons {
+    width: 20%;
+    gap: 10%;
+  }
+  .modal-container > .password-box > .pass-buttons > button > svg {
+    width: 70%;
+    height: 100%;
+  }
+  .modal-container h3 {
+    font-size: 1.5rem;
+  }
+  .presets-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "genrate genrate genrate genrate genrate genrate"
+      "heading heading heading heading heading heading"
+      "perfect perfect random random minimum minimum";
+    gap: 0 1em;
+  }
+  .presets-container > .preset-btn {
+    font-size: 1rem;
+    padding: 0 !important;
+  }
+  .presets-container > .genreate-btn {
+    height: 3rem !important;
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 0;
+  }
+  .custom-container {
+    gap: 0;
+  }
+  .custom-container > .options-container {
+    gap: 0.1em;
+    grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+  }
+
+  .custom-container > .words-option-container {
+    grid-template-columns: 1fr 0.5fr 1.2fr 0.3fr;
+    grid-template-areas: "title tickbox input number";
+  }
+  .custom-container > .options-container > h4 {
+    font-size: 1.3rem;
+  }
+  .custom-container > .options-container > p {
+    font-size: 1.3rem;
+    padding: 1% 20%;
+  }
+  .tickbox-container input[type="checkbox"],
+  .checkmark {
+    height: 1.5rem !important;
+    width: 1.5rem !important;
+  }
+  .tickbox-container .checkmark::after {
+    width: 20%;
+    height: 40%;
+    border-width: 0 3px 3px 0 !important;
+  }
+  .custom-container > .options-container > input[type="number"],
+  .custom-container > .options-container > input[type="text"] {
+    font-size: 1rem;
+    border-radius: 1px;
+  }
+  .custom-container
+    > .options-container
+    > input[type="range"]::-webkit-slider-thumb,
+  .custom-container
+    > .options-container
+    > input[type="range"]::-moz-range-thumb {
+    width: 10%;
+  }
+}

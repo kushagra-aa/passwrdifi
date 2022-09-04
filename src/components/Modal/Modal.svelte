@@ -138,9 +138,21 @@
   </div>
   <div class="presets-container">
     <h3>presets:</h3>
-    <Button clickFunction={makePerfect} classNames="" content="perfect" />
-    <Button clickFunction={makeRandom} classNames="" content="random" />
-    <Button clickFunction={makeMinimum} classNames="" content="minimum" />
+    <Button
+      clickFunction={makePerfect}
+      classNames="preset-btn"
+      content="perfect"
+    />
+    <Button
+      clickFunction={makeRandom}
+      classNames="preset-btn"
+      content="random"
+    />
+    <Button
+      clickFunction={makeMinimum}
+      classNames="preset-btn"
+      content="minimum"
+    />
     <Button
       clickFunction={generatePassword}
       classNames="genreate-btn"

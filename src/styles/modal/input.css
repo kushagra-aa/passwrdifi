@@ -17,7 +17,7 @@
   grid-area: input;
   text-align: center;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 1.25rem;
   background: #e76f51;
   box-shadow: inset 0px 4px 4px rgba(var(--secondary), 0.12);
   border-radius: 5px;
