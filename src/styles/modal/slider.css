@@ -13,8 +13,6 @@
 .custom-container
   > .options-container
   > input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
   width: 2%;
   height: 400%;
   border-radius: 100%;
