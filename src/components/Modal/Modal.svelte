@@ -94,13 +94,13 @@
     lastEndpoint = "/pass/generateRandomWithCustom";
     if (!isUpper && !isLower && !isSymbols && !isNumbers && !isWord)
       lastEndpoint = "/pass/generateRandom";
-    if (isLength) {
+    if (isLength && !isUpper && !isLower && !isSymbols && !isNumbers && !isWord) {
       lastEndpoint = "/pass/generateRandomWithLength";
       lastData = {
         Length: length,
       };
     }
-    if (isWord) {
+    else if (isWord) {
       lastEndpoint = "/pass/generateFromString";
       lastData = { String: word, Perfect: "False" };
     }
