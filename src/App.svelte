@@ -3,10 +3,7 @@
   import Home from "./page/Home.svelte";
 
   let page =
-    window.location.href.split("://")[1].split("/")[1] === ""
-      ? "/"
-      : `/${window.location.href.split("://")[1].split("/")[1]}`;
-  console.log(page);
+    window.location.pathname === "" ? "/" : `${window.location.pathname}`;
   const changePage = () => {
     page = "/play";
   };
