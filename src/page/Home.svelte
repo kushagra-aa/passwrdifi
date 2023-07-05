@@ -4,9 +4,11 @@
   import Features from "./../components/Home/Features.svelte";
   import Try from "./../components/Home/Try.svelte";
   import Powered from "./../components/Home/Powered.svelte";
+
+  export let changePage = (path) => {};
 </script>
 
-<Hero />
+<Hero {changePage} />
 <Features />
 <Try />
 <Powered />

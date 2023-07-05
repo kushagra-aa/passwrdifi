@@ -4,11 +4,14 @@
 
   let page =
     window.location.pathname === "" ? "/" : `${window.location.pathname}`;
+  const changePage = (path) => {
+    page = path;
+  };
 </script>
 
 <main>
   {#if page === "/"}
-    <Home />
+    <Home {changePage} />
   {/if}
   {#if page === "/play"}
     <Modal />
