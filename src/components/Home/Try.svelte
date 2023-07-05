@@ -1,5 +1,6 @@
 <script>
   import SectionTitle from "./SectionTitle.svelte";
+  export let changePage = (path) => {};
 </script>
 
 <section id="try" class="w-full flex flex-col gap-8">
@@ -17,7 +18,8 @@
     <div class="con flex gap-2 items-center">
       <p class="text-secondary text-2xl">Unlock the Power of QR Codes Today!</p>
       <a
-        href="/play"
+        href="#play"
+        on:click={() => changePage("/play")}
         class="btn cursor-pointer capitalize bg-accent text-primary text-lg font-medium px-8 py-2 rounded-sm"
       >
         try it out !!
