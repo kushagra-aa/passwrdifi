@@ -29,7 +29,7 @@
     </div>
   </div>
   <div class="hero-image">
-    <img class="" src={HeroImage} alt="hero qr" />
+    <img class="animate-bounce-slow" src={HeroImage} alt="hero qr" />
   </div>
 </section>
 

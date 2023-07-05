@@ -7,7 +7,11 @@ module.exports = {
       secondary: "#E5CBFF",
       accent: "#AFFC41",
     },
-    extend: {},
+    extend: {
+      animation: {
+        "bounce-slow": "bounce 1s linear infinite",
+      },
+    },
   },
   plugins: [],
 };

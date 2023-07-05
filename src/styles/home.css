@@ -7,7 +7,7 @@ main {
 }
 @media screen and (max-width: 620px) {
   main {
-    @apply px-6 py-8 max-w-[100vw];
+    @apply px-6 py-10 max-w-[100vw];
   }
 }
 #hero > .hero-image > img {
