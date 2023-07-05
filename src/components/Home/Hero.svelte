@@ -1,5 +1,6 @@
 <script>
   import HeroImage from "./../../assets/Logo.png";
+  export let changePage = (path) => {};
 </script>
 
 <section id="hero" class="flex items-center justify-between w-full">
@@ -15,7 +16,8 @@
     </p>
     <div class="flex gap-8">
       <a
-        href="#features"
+        on:click={() => changePage("/play")}
+        href="#"
         class="btn cursor-pointer capitalize bg-accent text-primary text-lg font-medium px-8 py-2 rounded-sm"
       >
         know more
