@@ -3,24 +3,40 @@
   import Card from "./Card.svelte";
 </script>
 
-<section id="functionalities w-full">
+<section id="features w-full">
   <SectionTitle>functionalities</SectionTitle>
   <div class="cards grid grid-cols-2 gap-5 py-8">
     <Card
-      title="WhatsApp numbers"
-      description="Easily create QR codes and links for WhatsApp numbers, enabling seamless communication with your contacts."
+      title="Random Password"
+      description="Quickly generate random passwords that are strong and unique."
     />
     <Card
-      title="Contact Cards"
-      description="Create QR codes for contact cards, making it effortless to share your contact information with others."
+      title="Perfect Password"
+      description="Specify the number of characters in your password."
     />
     <Card
-      title="Mobile Numbers"
-      description="Create QR codes for contact cards, making it effortless to share your contact information with others."
+      title="Password Length"
+      description="Specify the number of characters in your password."
     />
     <Card
-      title="URL/Link"
-      description="Generate QR codes for any URL or link, allowing easy access to websites, social media profiles, or other online resources."
+      title="User-Created Passwords"
+      description="Create a password using your own string for a personalized touch."
+    />
+    <Card
+      title="Uppercase Characters"
+      description="Determine the number of uppercase letters."
+    />
+    <Card
+      title="Lowercase Characters"
+      description="Decide on the number of lowercase letters."
+    />
+    <Card
+      title="Special Characters"
+      description="Include special characters for added complexity."
+    />
+    <Card
+      title="Numbers"
+      description="Add numeric digits to enhance the strength of your password."
     />
   </div>
 </section>

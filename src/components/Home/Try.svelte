@@ -6,9 +6,13 @@
   <SectionTitle>try it out !!</SectionTitle>
   <div class="flex flex-col gap-5 w-[90%] self-end">
     <p class="text-secondary text-xl w-5/6">
-      <span class="text-accent">Click</span>
-      on the link to try out the app for yourself. You can generate QR codes, download
-      them, and copy the links for convenient sharing.
+      <span class="text-accent capitalize">Click</span>
+      on the link to try out the app for yourself. You can generate
+      <span class="text-accent capitalize">Passwords</span>
+      based on your unique preferences and see how easy it is to safeguard your online
+      accounts and
+      <span class="text-accent capitalize">copy</span>
+      them convenient usage.
     </p>
     <div class="con flex gap-2 items-center">
       <p class="text-secondary text-2xl">Unlock the Power of QR Codes Today!</p>

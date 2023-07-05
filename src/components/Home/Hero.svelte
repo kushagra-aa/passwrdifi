@@ -6,13 +6,12 @@
   <div class="flex flex-col w-2/5 items-start gap-8">
     <h1 class="text-secondary text-6xl capitalize font-bold">
       <span class="text-accent"> not</span>
-      your ordinary
-      <span class="text-accent underline underline-offset-4"> QR Code</span>
+      a simple
+      <span class="text-accent underline underline-offset-4"> password</span>
       Generator.
     </h1>
     <p class="text-secondary font-light text-2xl">
-      It is a feature-rich tool designed to simplify the generation of QR codes
-      for various purposes.
+      Generate Strong and Secure Passwords.
     </p>
     <div class="flex gap-8">
       <a

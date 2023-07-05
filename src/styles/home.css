@@ -7,7 +7,7 @@ main {
 }
 @media screen and (max-width: 620px) {
   main {
-    @apply px-6 py-8;
+    @apply px-6 py-8 max-w-[100vw];
   }
 }
 #hero > .hero-image > img {
@@ -59,8 +59,7 @@ img {
 }
 @media screen and (max-width: 620px) {
   .card {
-    @apply px-2 py-1;
-    gap: 12px;
+    @apply px-2 py-1 gap-2;
   }
   .card > h6 {
     @apply text-xl;
