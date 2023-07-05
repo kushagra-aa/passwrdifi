@@ -1,8 +1,12 @@
 <script>
+  import Hero from "./../components/Home/Hero.svelte";
   import "./../styles/home.css";
-
-  export let changePage = () => {};
+  import Features from "./../components/Home/Features.svelte";
+  import Try from "./../components/Home/Try.svelte";
+  import Powered from "./../components/Home/Powered.svelte";
 </script>
 
-<h1 class="text-red-500">Hello</h1>
-<a href="/play" on:click={changePage}> click </a>
+<Hero />
+<Features />
+<Try />
+<Powered />
