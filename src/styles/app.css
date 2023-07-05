@@ -3,10 +3,10 @@
 @import url("./responsive/modal.resp.css");
 
 :root {
-  --primary: 231, 111, 81;
-  --primary2: 236, 97, 62;
-  --secondary: 2, 40, 53;
-  --accent: 183, 22, 22;
+  --primary: 28, 0, 45;
+  --primary2: 60, 22, 66;
+  --secondary: 229, 209, 225;
+  --accent: 175, 252, 65;
   --radius: 15px;
 }
 

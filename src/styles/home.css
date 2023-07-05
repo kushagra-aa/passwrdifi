@@ -1,3 +1,95 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+main {
+  @apply max-w-screen-2xl px-20 flex flex-col items-start py-20 gap-8;
+}
+@media screen and (max-width: 620px) {
+  main {
+    @apply px-6 py-10 max-w-[100vw];
+  }
+}
+#hero > .hero-image > img {
+  max-width: 250px;
+  height: 250px;
+  object-fit: contain;
+}
+@media screen and (max-width: 620px) {
+  #hero {
+    @apply items-start;
+  }
+  #hero h1 {
+    @apply text-4xl w-5/6;
+  }
+  #hero p {
+    @apply text-xl;
+  }
+  #hero > div {
+    @apply w-full;
+    flex: 1;
+  }
+  #hero > div > div > a {
+    @apply text-sm px-4 py-1 w-max;
+  }
+  #hero > .hero-image > img {
+    top: 0;
+    left: 0;
+    max-width: 200px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .cards {
+    @apply !flex flex-col;
+  }
+}
+.card {
+  @apply grid border border-accent px-4 py-3 rounded-md items-center;
+  grid-template-rows: 0.5fr 1.5fr;
+}
+img {
+  grid-row: 1/3;
+}
+.card > h6 {
+  @apply text-accent text-2xl font-medium;
+}
+.card > p {
+  @apply text-secondary text-lg font-light;
+}
+@media screen and (max-width: 620px) {
+  .card {
+    @apply px-2 py-1 gap-2;
+  }
+  .card > h6 {
+    @apply text-xl;
+  }
+  .card > p {
+    @apply text-sm;
+  }
+}
+@media screen and (max-width: 620px) {
+  #try > div {
+    @apply w-full;
+  }
+  #try > div > p {
+    @apply text-sm w-full;
+  }
+  .con {
+    @apply flex-col items-start !gap-0;
+  }
+  .con > p {
+    @apply text-xl;
+  }
+}
+#powered img {
+  height: 32px;
+}
+@media screen and (max-width: 620px) {
+  .tech {
+    @apply flex-col gap-2;
+  }
+  #powered img {
+    height: 24px;
+  }
+}

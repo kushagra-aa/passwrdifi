@@ -58,11 +58,12 @@
 }
 
 .modal-container > .password-box {
-  box-shadow: inset 0px 4px 4px rgba(var(--secondary), 0.25);
+  box-shadow: inset 0px 4px 4px rgba(var(--primary2), 0.25);
   border-radius: var(--radius);
   display: flex;
   width: 100%;
   overflow: hidden;
+  background: rgb(var(--primary));
 }
 
 .modal-container > .password-box > p {
@@ -79,7 +80,7 @@
 .modal-container > .password-box > .pass-buttons {
   display: flex;
   gap: 15%;
-  background: rgba(var(--primary), 0.8);
+  background: rgba(var(--accent), 1);
   width: 12%;
   height: 100%;
   align-items: center;
@@ -90,6 +91,8 @@
 }
 
 .modal-container > .password-box > .pass-buttons > button {
+  display: grid;
+  place-items: center;
   border: none;
   background: none;
 }
@@ -102,7 +105,7 @@
 .modal-container > .password-box > .pass-buttons > button > svg {
   width: 70%;
   height: 3.75rem;
-  stroke: rgba(var(--secondary), 1) !important;
+  stroke: rgba(var(--primary), 1) !important;
   stroke-width: 3px;
 }
 
@@ -157,6 +160,7 @@
   padding: 1% 20%;
   font-weight: 300;
   font-size: 1.563rem;
+  color: rgba(var(--accent), 1);
   border: 2px solid rgba(var(--accent), 1);
 }
 .presets-container > .genreate-btn {
