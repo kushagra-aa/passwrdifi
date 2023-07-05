@@ -10,5 +10,5 @@
 
 <Hero {changePage} />
 <Features />
-<Try />
+<Try {changePage} />
 <Powered />

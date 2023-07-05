@@ -16,14 +16,14 @@
     </p>
     <div class="flex gap-8">
       <a
-        on:click={() => changePage("/play")}
-        href="#"
+        href="#features"
         class="btn cursor-pointer capitalize bg-accent text-primary text-lg font-medium px-8 py-2 rounded-sm"
       >
         know more
       </a>
       <a
-        href="/play"
+        on:click={() => changePage("/play")}
+        href="#play"
         class="btn cursor-pointer capitalize border-b border-accent text-accent text-lg font-medium px-8 py-2 rounded-sm"
       >
         try it out !!
