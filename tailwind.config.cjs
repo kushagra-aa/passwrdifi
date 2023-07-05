@@ -2,8 +2,8 @@ module.exports = {
   content: ["./src/**/*.{html,js,svelte,ts}"],
   theme: {
     colors: {
-      primary: "#1C002D",
-      "primary-2": "#3C1642",
+      primary: "#12001D",
+      "primary-2": "#2a102e",
       secondary: "#E5CBFF",
       accent: "#AFFC41",
     },
