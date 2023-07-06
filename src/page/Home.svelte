@@ -4,6 +4,7 @@
   import Features from "./../components/Home/Features.svelte";
   import Try from "./../components/Home/Try.svelte";
   import Powered from "./../components/Home/Powered.svelte";
+  import MadeBy from "./../components/Home/MadeBy.svelte";
 
   export let changePage = (path) => {};
 </script>
@@ -12,3 +13,4 @@
 <Features />
 <Try {changePage} />
 <Powered />
+<MadeBy />
