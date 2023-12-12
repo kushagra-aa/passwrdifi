@@ -3,8 +3,9 @@
   import CopyIcon from "./../../assets/Copy.svg";
   import RefreshIcon from "./../../assets/Refresh.svg";
   import Options from "./Options.svelte";
-  import Api from "./../../services/Api";
   import { onMount } from "svelte";
+  import generatorAPI from "../../services/generatorAPI";
+
   let password = "";
   let length = 6;
   let upper = 0;
@@ -20,30 +21,33 @@
   let word = "";
   let lastData = {};
   let lastEndpoint = {};
+
   onMount(() => genrateRandomPassword());
   $: if (isLower) if (lower <= 0) lower = 1;
   $: if (isUpper) if (upper <= 0) upper = 1;
   $: if (isNumbers) if (numbers <= 0) numbers = 1;
   $: if (isSymbols) if (symbols <= 0) symbols = 1;
   const genrateRandomPassword = async () => {
-    lastEndpoint = "/pass/generateRandom";
-    password = await Api.post(lastEndpoint).then((resp) => resp.data.password);
+    lastEndpoint = "Random";
+    password = await generatorAPI(lastEndpoint).then(
+      (resp) => resp.data.password
+    );
   };
   const copyToClipBoard = () => {
     navigator.clipboard.writeText(password);
   };
   const makePerfect = async () => {
-    lastEndpoint = "/pass/generateRandomPerfect";
+    lastEndpoint = "Perfect";
     length = 10;
     upper = 2;
     lower = 2;
     numbers = 2;
     symbols = 2;
     if (isWord) {
-      lastEndpoint = "/pass/generateFromString";
+      lastEndpoint = "FromString";
       lastData = { String: word, Perfect: "True" };
     }
-    password = await Api.post(lastEndpoint, lastData).then(
+    password = await generatorAPI(lastEndpoint, lastData).then(
       (resp) => resp.data.password
     );
   };
@@ -53,15 +57,15 @@
     isWord = false;
     isNumbers = false;
     isSymbols = false;
-    lastEndpoint = "/pass/generateRandom";
+    lastEndpoint = "Random";
     lastData = {};
     if (isLength) {
-      lastEndpoint = "/pass/generateRandomWithLength";
+      lastEndpoint = "WithLength";
       lastData = {
         Length: length,
       };
     }
-    password = await Api.post(lastEndpoint, lastData).then(
+    password = await generatorAPI(lastEndpoint, lastData).then(
       (resp) => resp.data.password
     );
   };
@@ -75,11 +79,11 @@
     isWord = false;
     isNumbers = false;
     isSymbols = false;
-    lastEndpoint = "/pass/generateRandomWithMinimum";
+    lastEndpoint = "WithMinimum";
     lastData = {
       Length: length,
     };
-    password = await Api.post(lastEndpoint, lastData).then(
+    password = await generatorAPI(lastEndpoint, lastData).then(
       (resp) => resp.data.password
     );
   };
@@ -91,26 +95,32 @@
       Symbols: isSymbols ? symbols : 0,
       Digits: isNumbers ? numbers : 0,
     };
-    lastEndpoint = "/pass/generateRandomWithCustom";
+    lastEndpoint = "WithCustom";
     if (!isUpper && !isLower && !isSymbols && !isNumbers && !isWord)
-      lastEndpoint = "/pass/generateRandom";
-    if (isLength && !isUpper && !isLower && !isSymbols && !isNumbers && !isWord) {
-      lastEndpoint = "/pass/generateRandomWithLength";
+      lastEndpoint = "Random";
+    if (
+      isLength &&
+      !isUpper &&
+      !isLower &&
+      !isSymbols &&
+      !isNumbers &&
+      !isWord
+    ) {
+      lastEndpoint = "WithLength";
       lastData = {
         Length: length,
       };
-    }
-    else if (isWord) {
-      lastEndpoint = "/pass/generateFromString";
+    } else if (isWord) {
+      lastEndpoint = "FromString";
       lastData = { String: word, Perfect: "False" };
     }
-    password = await Api.post(lastEndpoint, lastData).then(
+    password = await generatorAPI(lastEndpoint, lastData).then(
       (resp) => resp.data.password
     );
     length = password.length;
   };
   const refreshPassword = async () => {
-    password = await Api.post(lastEndpoint, lastData).then(
+    password = await generatorAPI(lastEndpoint, lastData).then(
       (resp) => resp.data.password
     );
   };
